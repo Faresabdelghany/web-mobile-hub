@@ -25,7 +25,7 @@ const programs = [
 
 const Programs = () => {
   return (
-    <section className="py-20 px-6 bg-background">
+    <section id="programs" className="py-20 px-6 bg-background">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold mb-12">
           Explore Our Programs
