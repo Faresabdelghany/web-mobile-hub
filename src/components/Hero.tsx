@@ -3,7 +3,7 @@ import heroImage from "@/assets/hero-office.jpg";
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center px-6 py-20 bg-background">
+    <section id="home" className="min-h-screen flex items-center justify-center px-6 py-20 bg-background">
       <div className="max-w-7xl w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">

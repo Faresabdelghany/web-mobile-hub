@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 const MarketingSolution = () => {
   return (
-    <section className="py-20 px-6 bg-muted">
+    <section id="solutions" className="py-20 px-6 bg-muted">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">

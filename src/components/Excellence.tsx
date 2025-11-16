@@ -3,7 +3,7 @@ import excellenceImage from "@/assets/excellence-workspace.jpg";
 
 const Excellence = () => {
   return (
-    <section className="py-20 px-6 bg-background">
+    <section id="excellence" className="py-20 px-6 bg-background">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>

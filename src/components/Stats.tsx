@@ -60,7 +60,7 @@ const Counter = ({ end, suffix }: { end: number; suffix: string }) => {
 
 const Stats = () => {
   return (
-    <section className="py-20 px-6 bg-background border-y border-border">
+    <section id="stats" className="py-20 px-6 bg-background border-y border-border">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (

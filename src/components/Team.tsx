@@ -4,7 +4,7 @@ import teamMember2 from "@/assets/team-member-2.jpg";
 
 const Team = () => {
   return (
-    <section className="py-20 px-6 bg-muted">
+    <section id="team" className="py-20 px-6 bg-muted">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12">
           <div className="space-y-6">
