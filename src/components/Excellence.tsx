@@ -1,15 +1,14 @@
-import { Button } from "@/components/ui/button";
 import excellenceImage from "@/assets/excellence-workspace.jpg";
 
 const Excellence = () => {
   return (
-    <section id="excellence" className="py-20 px-6 bg-background">
+    <section id="company" className="py-20 px-6 bg-background">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
           <div>
-            <img 
-              src={excellenceImage} 
-              alt="Professional workspace" 
+            <img
+              src={excellenceImage}
+              alt="Professional workspace"
               className="w-full h-auto rounded-sm"
             />
           </div>
@@ -17,16 +16,10 @@ const Excellence = () => {
             <h2 className="text-4xl md:text-5xl font-bold leading-tight">
               Excellence in Customer Experience and Innovation
             </h2>
-            <p className="text-muted-foreground text-lg leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod 
-              tempor incididunt ut labore et dolore magna aliqua.
+            <p className="text-muted-foreground text-base leading-relaxed">
+              We are a fully transparent, data-driven and adaptive team who are very thankful
+              for our close relationships and we are very fortunate to be able to share.
             </p>
-            <Button 
-              variant="outline" 
-              className="border-2 border-foreground text-foreground hover:bg-foreground hover:text-background font-semibold"
-            >
-              Learn More
-            </Button>
           </div>
         </div>
       </div>

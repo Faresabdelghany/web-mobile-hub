@@ -4,12 +4,10 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { id: "home", label: "Home" },
-  { id: "stats", label: "Stats" },
-  { id: "excellence", label: "Excellence" },
-  { id: "team", label: "Team" },
+  { id: "home", label: "About Us" },
   { id: "programs", label: "Programs" },
-  { id: "solutions", label: "Solutions" },
+  { id: "company", label: "Company" },
+  { id: "team", label: "Teams" },
 ];
 
 const Navigation = () => {
@@ -69,7 +67,7 @@ const Navigation = () => {
               onClick={() => scrollToSection("home")}
               className="text-xl md:text-2xl font-bold tracking-tight hover:opacity-80 transition-opacity"
             >
-              Digital Agency
+              Geener
             </button>
 
             {/* Desktop Navigation */}
@@ -93,9 +91,9 @@ const Navigation = () => {
               ))}
               <Button
                 onClick={() => scrollToSection("contact")}
-                className="bg-foreground text-background hover:bg-foreground/90"
+                className="bg-background text-foreground hover:bg-background/90 border border-foreground"
               >
-                Contact
+                Contact Us
               </Button>
             </div>
 
@@ -144,10 +142,10 @@ const Navigation = () => {
           <Button
             onClick={() => scrollToSection("contact")}
             size="lg"
-            className="bg-foreground text-background hover:bg-foreground/90 animate-fade-in"
+            className="bg-background text-foreground hover:bg-background/90 border border-foreground animate-fade-in"
             style={{ animationDelay: `${navItems.length * 50}ms` }}
           >
-            Contact
+            Contact Us
           </Button>
         </nav>
       </div>

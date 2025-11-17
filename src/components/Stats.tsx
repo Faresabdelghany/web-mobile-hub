@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 
 const stats = [
-  { value: 2000, suffix: "+", label: "Projects Completed" },
+  { value: 2000, suffix: "+", label: "Company" },
   { value: 10, suffix: "+", label: "Years Experience" },
-  { value: 800, suffix: "+", label: "Happy Clients" },
-  { value: 1500, suffix: "k+", label: "Revenue Generated" },
+  { value: 800, suffix: "+", label: "Hours of Digital" },
+  { value: 150, suffix: "M+", label: "In Tracked Revenue" },
 ];
 
 const Counter = ({ end, suffix }: { end: number; suffix: string }) => {
@@ -60,7 +60,7 @@ const Counter = ({ end, suffix }: { end: number; suffix: string }) => {
 
 const Stats = () => {
   return (
-    <section id="stats" className="py-20 px-6 bg-background border-y border-border">
+    <section id="stats" className="py-20 px-6 bg-foreground text-background">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
@@ -68,7 +68,7 @@ const Stats = () => {
               <div className="text-4xl md:text-5xl font-bold">
                 <Counter end={stat.value} suffix={stat.suffix} />
               </div>
-              <p className="text-sm md:text-base text-muted-foreground">{stat.label}</p>
+              <p className="text-sm md:text-base opacity-80">{stat.label}</p>
             </div>
           ))}
         </div>
