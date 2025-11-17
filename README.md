@@ -1,73 +1,121 @@
-# Welcome to your Lovable project
+# Geener - Full Service Digital Marketing Agency
 
-## Project info
+A modern, professional website for Geener Digital Marketing Agency built with React, TypeScript, and Tailwind CSS.
 
-**URL**: https://lovable.dev/projects/12b95c97-423d-4d15-ac23-c2b4c7e4999d
+## 🚀 Features
 
-## How can I edit this code?
+- **Modern Design**: Clean black and white aesthetic with professional branding
+- **Responsive Layout**: Fully responsive design that works on all devices
+- **Smooth Navigation**: Fixed navbar with smooth scroll to sections
+- **Interactive Sections**:
+  - Hero section with call-to-action
+  - Statistics showcase (2000+ customers, 10+ years experience)
+  - Team culture highlights with alternating layouts
+  - Programs overview with numbered list
+  - Testimonial carousel with auto-play
+  - Background CTA section
+- **Contact Page**: Dedicated contact page with business information
+- **Fast Performance**: Built with Vite for optimal loading speeds
 
-There are several ways of editing your application.
+## 🛠️ Tech Stack
 
-**Use Lovable**
+This project is built with modern web technologies:
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/12b95c97-423d-4d15-ac23-c2b4c7e4999d) and start prompting.
+- **Vite** - Lightning-fast build tool
+- **TypeScript** - Type-safe JavaScript
+- **React 18** - UI library with hooks
+- **React Router** - Client-side routing
+- **Tailwind CSS** - Utility-first CSS framework
+- **shadcn/ui** - High-quality UI components
+- **Lucide React** - Beautiful icon library
 
-Changes made via Lovable will be committed automatically to this repo.
+## 📦 Getting Started
 
-**Use your preferred IDE**
+### Prerequisites
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- Node.js (v16 or higher)
+- npm or yarn
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Installation
 
-Follow these steps:
+1. Clone the repository:
+```bash
+git clone https://github.com/Faresabdelghany/web-mobile-hub.git
+cd web-mobile-hub
+```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+2. Install dependencies:
+```bash
+npm install
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+3. Start the development server:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The application will be available at `http://localhost:8080`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🏗️ Project Structure
 
-**Use GitHub Codespaces**
+```
+src/
+├── components/
+│   ├── home/           # Home page sections
+│   │   ├── HeroSection.tsx
+│   │   ├── StatsSection.tsx
+│   │   ├── CultureSection.tsx
+│   │   ├── PortfolioSection.tsx
+│   │   ├── MarketingGoals.tsx
+│   │   ├── TestimonialSection.tsx
+│   │   └── CTASection.tsx
+│   └── ui/             # Reusable UI components
+├── layouts/
+│   └── Layout.tsx      # Main layout with header/footer
+├── pages/
+│   ├── Index.tsx       # Home page
+│   └── Contact.tsx     # Contact page
+└── utils/
+    └── index.ts        # Utility functions
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 🎨 Design Features
 
-## What technologies are used for this project?
+- **Black & White Theme**: Professional, clean aesthetic
+- **Smooth Scrolling**: Navbar links smoothly scroll to sections
+- **Hover Effects**: Interactive elements with smooth transitions
+- **Grayscale Images**: Consistent visual style throughout
+- **Curved Buttons**: Modern rounded button designs
+- **Testimonial Carousel**: Auto-rotating testimonials with manual controls
 
-This project is built with:
+## 📱 Sections
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+1. **Hero** - Bold headline with call-to-action
+2. **Stats** - Key business metrics
+3. **Culture** - Team values and company culture
+4. **Programs** - Service offerings (Redesign+, SEO, PPC, Resell SEO)
+5. **Marketing Goals** - Value proposition with testimonials
+6. **CTA** - Final call-to-action with background image
+7. **Contact** - Business contact information
 
-## How can I deploy this project?
+## 🚀 Deployment
 
-Simply open [Lovable](https://lovable.dev/projects/12b95c97-423d-4d15-ac23-c2b4c7e4999d) and click on Share -> Publish.
+Build the project for production:
 
-## Can I connect a custom domain to my Lovable project?
+```bash
+npm run build
+```
 
-Yes, you can!
+The optimized files will be in the `dist/` directory, ready to deploy to any static hosting service.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 📄 License
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+This project is private and proprietary.
+
+## 🤝 Contributing
+
+This is a private project. Contact the repository owner for contribution guidelines.
+
+---
+
+Built with ❤️ by the Geener team
