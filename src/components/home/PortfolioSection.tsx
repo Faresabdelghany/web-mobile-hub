@@ -25,9 +25,9 @@ const programs = [
 
 export default function PortfolioSection() {
   return (
-    <div id="programs" className="bg-black text-white px-6 lg:px-20 py-20">
+    <div id="programs" className="bg-black text-white px-4 sm:px-6 md:px-10 lg:px-20 py-12 sm:py-16 md:py-20">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl lg:text-5xl font-bold mb-12">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 sm:mb-10 md:mb-12">
           Explore Our Programs
         </h2>
 
@@ -35,19 +35,19 @@ export default function PortfolioSection() {
           {programs.map((program, index) => (
             <div
               key={index}
-              className="border-b border-gray-800 py-8 group hover:bg-gray-900/30 transition-colors px-6 -mx-6"
+              className="border-b border-gray-800 py-6 sm:py-8 group hover:bg-gray-900/30 transition-colors px-4 sm:px-6 -mx-4 sm:-mx-6"
             >
-              <div className="flex items-start justify-between gap-8">
+              <div className="flex items-start justify-between gap-4 sm:gap-6 md:gap-8">
                 <div className="flex-1">
-                  <div className="flex items-start gap-6 mb-4">
-                    <span className="text-gray-500 text-3xl lg:text-4xl font-bold">{program.number}</span>
-                    <h3 className="text-2xl lg:text-3xl font-bold">{program.title}</h3>
+                  <div className="flex items-start gap-3 sm:gap-4 md:gap-6 mb-3 sm:mb-4">
+                    <span className="text-gray-500 text-2xl sm:text-3xl lg:text-4xl font-bold">{program.number}</span>
+                    <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold">{program.title}</h3>
                   </div>
-                  <p className="text-gray-400 leading-relaxed ml-14 lg:ml-20">
+                  <p className="text-gray-400 leading-relaxed ml-8 sm:ml-12 md:ml-14 lg:ml-20 text-sm sm:text-base">
                     {program.description}
                   </p>
                 </div>
-                <ArrowRight className="w-6 h-6 text-white flex-shrink-0 mt-2 group-hover:translate-x-2 transition-transform" />
+                <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 text-white flex-shrink-0 mt-1 sm:mt-2 group-hover:translate-x-2 transition-transform hidden sm:block" />
               </div>
             </div>
           ))}

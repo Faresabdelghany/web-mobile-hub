@@ -1,5 +1,4 @@
 import React from "react";
-import { Button } from "@/components/ui/button";
 
 const sections = [
   {
@@ -18,29 +17,26 @@ const sections = [
 
 export default function CultureSection() {
   return (
-    <div id="company" className="bg-white px-6 lg:px-20 py-20">
-      <div className="max-w-7xl mx-auto space-y-20">
+    <div id="company" className="bg-white px-4 sm:px-6 md:px-10 lg:px-20 py-12 sm:py-16 md:py-20">
+      <div className="max-w-7xl mx-auto space-y-12 sm:space-y-16 md:space-y-20">
         {sections.map((section, index) => (
           <div
             key={index}
-            className={`grid lg:grid-cols-2 gap-12 items-center ${
+            className={`grid lg:grid-cols-2 gap-8 md:gap-12 items-center ${
               section.imagePosition === "left" ? "lg:grid-flow-dense" : ""
             }`}
           >
             <div className={section.imagePosition === "left" ? "lg:col-start-2" : ""}>
-              <h2 className="text-4xl lg:text-5xl font-bold text-black leading-tight mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black leading-tight mb-4 md:mb-6">
                 {section.title}
               </h2>
-              <p className="text-gray-600 leading-relaxed mb-8">
+              <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
                 {section.description}
               </p>
-              <Button className="bg-black text-white hover:bg-gray-800 px-6 py-3 rounded-md font-medium">
-                Learn More
-              </Button>
             </div>
 
             <div className={section.imagePosition === "left" ? "lg:col-start-1 lg:row-start-1" : ""}>
-              <div className="rounded-xl overflow-hidden h-96">
+              <div className="rounded-xl overflow-hidden h-64 sm:h-80 md:h-96">
                 <img
                   src={section.image}
                   alt={section.title}

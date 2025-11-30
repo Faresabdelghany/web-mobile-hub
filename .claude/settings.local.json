@@ -3,7 +3,10 @@
     "allow": [
       "Bash(npm run dev:*)",
       "Bash(npm install)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nTransform UI to Geener branding with modern design\n\nMajor updates:\n- Complete redesign with Geener branding and black/white theme\n- Removed contact form and Lovable references\n- Implemented React Router layout with centralized navigation\n- Reorganized components into home/ directory structure\n\nNew features:\n- Black navbar with curved Contact Us button and smooth scroll navigation\n- Hero section with multi-line heading and Unsplash image\n- Stats section displaying key metrics (2000+ customers, 10+ years, etc.)\n- Culture section with team values and alternating image layouts\n- Programs section with numbered list and detailed descriptions\n- Testimonial carousel with auto-play and manual navigation\n- Enhanced CTA section with background image overlay\n- Contact page with information cards and \"Why Choose Geener\" section\n\nTechnical improvements:\n- Created Layout wrapper for consistent header/footer across pages\n- Added section IDs for smooth scroll navigation\n- Implemented component-based architecture organized by page\n- Updated all styling to match Geener''s professional black/white aesthetic\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git push)",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "ask": []

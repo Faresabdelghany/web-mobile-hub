@@ -59,25 +59,25 @@ export default function MarketingGoals() {
   };
 
   return (
-    <div id="team" className="bg-white px-6 lg:px-20 py-20">
+    <div id="team" className="bg-white px-4 sm:px-6 md:px-10 lg:px-20 py-12 sm:py-16 md:py-20">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <div>
-            <h2 className="text-4xl lg:text-6xl font-bold text-black leading-tight mb-8">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-black leading-tight mb-6 md:mb-8">
               Exceed your Marketing Goals with our All-in-one Marketing Solution
             </h2>
 
-            <Button className="bg-black text-white hover:bg-gray-800 px-6 py-3 rounded-md font-medium group">
+            <Button className="bg-black text-white hover:bg-gray-800 px-6 py-3 rounded-md font-medium group text-sm sm:text-base">
               Get Free Quote
               <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Button>
           </div>
 
           <div>
-            <div className="bg-black text-white rounded-2xl p-8 relative overflow-hidden">
-              <h3 className="text-2xl font-bold mb-6">What Our Client Says</h3>
+            <div className="bg-black text-white rounded-2xl p-6 sm:p-8 relative overflow-hidden">
+              <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">What Our Client Says</h3>
 
-              <div className="relative min-h-[280px]">
+              <div className="relative min-h-[240px] sm:min-h-[280px]">
                 {testimonials.map((testimonial, index) => (
                   <div
                     key={index}
@@ -89,14 +89,14 @@ export default function MarketingGoals() {
                         : 'opacity-0 translate-x-full'
                     }`}
                   >
-                    <div className="mb-8">
-                      <div className="text-6xl text-gray-600 mb-4">"</div>
-                      <p className="text-gray-300 text-lg leading-relaxed mb-6">
+                    <div className="mb-6 sm:mb-8">
+                      <div className="text-4xl sm:text-6xl text-gray-600 mb-2 sm:mb-4">"</div>
+                      <p className="text-gray-300 text-base sm:text-lg leading-relaxed mb-4 sm:mb-6">
                         {testimonial.quote}
                       </p>
 
-                      <div className="flex items-center gap-4">
-                        <div className="w-16 h-16 rounded-full overflow-hidden">
+                      <div className="flex items-center gap-3 sm:gap-4">
+                        <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full overflow-hidden flex-shrink-0">
                           <img
                             src={testimonial.image}
                             alt={testimonial.name}
@@ -104,8 +104,8 @@ export default function MarketingGoals() {
                           />
                         </div>
                         <div>
-                          <p className="font-semibold">{testimonial.name}</p>
-                          <p className="text-gray-400 text-sm">{testimonial.title}</p>
+                          <p className="font-semibold text-sm sm:text-base">{testimonial.name}</p>
+                          <p className="text-gray-400 text-xs sm:text-sm">{testimonial.title}</p>
                         </div>
                       </div>
                     </div>
@@ -114,25 +114,25 @@ export default function MarketingGoals() {
               </div>
 
               {/* Navigation Arrows */}
-              <div className="flex items-center justify-between mt-6">
+              <div className="flex items-center justify-between mt-4 sm:mt-6">
                 <button
                   onClick={goToPrev}
-                  className="p-2 rounded-full bg-gray-800 hover:bg-gray-700 transition-colors"
+                  className="p-1.5 sm:p-2 rounded-full bg-gray-800 hover:bg-gray-700 transition-colors"
                   aria-label="Previous testimonial"
                 >
-                  <ChevronLeft className="w-5 h-5" />
+                  <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
                 </button>
 
                 {/* Dots Navigation */}
-                <div className="flex gap-2">
+                <div className="flex gap-1.5 sm:gap-2">
                   {testimonials.map((_, index) => (
                     <button
                       key={index}
                       onClick={() => goToSlide(index)}
-                      className={`h-2 rounded-full transition-all ${
+                      className={`h-1.5 sm:h-2 rounded-full transition-all ${
                         index === currentIndex
-                          ? 'w-8 bg-white'
-                          : 'w-2 bg-gray-600 hover:bg-gray-500'
+                          ? 'w-6 sm:w-8 bg-white'
+                          : 'w-1.5 sm:w-2 bg-gray-600 hover:bg-gray-500'
                       }`}
                       aria-label={`Go to testimonial ${index + 1}`}
                     />
@@ -141,10 +141,10 @@ export default function MarketingGoals() {
 
                 <button
                   onClick={goToNext}
-                  className="p-2 rounded-full bg-gray-800 hover:bg-gray-700 transition-colors"
+                  className="p-1.5 sm:p-2 rounded-full bg-gray-800 hover:bg-gray-700 transition-colors"
                   aria-label="Next testimonial"
                 >
-                  <ChevronRight className="w-5 h-5" />
+                  <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
                 </button>
               </div>
             </div>
