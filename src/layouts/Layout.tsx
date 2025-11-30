@@ -54,9 +54,12 @@ export default function Layout({ children }: LayoutProps) {
       <header className="fixed top-0 left-0 right-0 z-50 bg-black backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <Link to={createPageUrl("Home")} className="text-xl md:text-2xl font-bold text-background">
+            <button
+              onClick={() => scrollToSection("home")}
+              className="text-xl md:text-2xl font-bold text-background cursor-pointer hover:opacity-90 transition-opacity"
+            >
               Geener
-            </Link>
+            </button>
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-8">
@@ -98,7 +101,7 @@ export default function Layout({ children }: LayoutProps) {
                     : "text-background/80 hover:text-background"
                 }`}
               >
-                Teams
+                Clients
               </button>
               <button
                 onClick={() => scrollToSection("contact")}
@@ -159,7 +162,7 @@ export default function Layout({ children }: LayoutProps) {
                     : "text-background/80"
                 }`}
               >
-                Teams
+                Clients
               </button>
               <button
                 onClick={() => scrollToSection("contact")}
