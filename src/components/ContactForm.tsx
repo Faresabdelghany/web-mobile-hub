@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -7,18 +8,21 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { toast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const contactSchema = z.object({
-  name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
+  name: z.string().trim().min(2, "Name must be at least 2 characters").max(100, "Name must be less than 100 characters"),
   email: z.string().trim().email("Invalid email address").max(255, "Email must be less than 255 characters"),
-  phone: z.string().trim().min(1, "Phone is required").max(20, "Phone must be less than 20 characters"),
-  message: z.string().trim().min(1, "Message is required").max(1000, "Message must be less than 1000 characters"),
+  phone: z.string().trim().max(20, "Phone must be less than 20 characters").optional(),
+  message: z.string().trim().min(10, "Message must be at least 10 characters").max(1000, "Message must be less than 1000 characters"),
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;
 
 const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [user, setUser] = useState<any>(null);
+  const navigate = useNavigate();
   
   const {
     register,
@@ -29,14 +33,43 @@ const ContactForm = () => {
     resolver: zodResolver(contactSchema),
   });
 
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setUser(session?.user ?? null);
+    });
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+      setUser(session?.user ?? null);
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
+
   const onSubmit = async (data: ContactFormData) => {
+    if (!user) {
+      toast({
+        variant: "destructive",
+        title: "Authentication required",
+        description: "Please log in to submit a contact form.",
+      });
+      navigate("/auth");
+      return;
+    }
+
     setIsSubmitting(true);
     
     try {
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      console.log("Form submitted:", data);
+      const { error } = await supabase
+        .from("contact_submissions")
+        .insert({
+          user_id: user.id,
+          name: data.name,
+          email: data.email,
+          phone: data.phone || null,
+          message: data.message,
+        });
+
+      if (error) throw error;
       
       toast({
         title: "Message sent!",
@@ -44,16 +77,27 @@ const ContactForm = () => {
       });
       
       reset();
-    } catch (error) {
+    } catch (error: any) {
       toast({
-        title: "Error",
-        description: "Something went wrong. Please try again.",
+        title: "Submission failed",
+        description: error.message || "Something went wrong. Please try again.",
         variant: "destructive",
       });
     } finally {
       setIsSubmitting(false);
     }
   };
+
+  if (!user) {
+    return (
+      <div className="max-w-2xl mx-auto text-center space-y-4">
+        <p className="text-muted-foreground">Please log in to submit a contact form</p>
+        <Button onClick={() => navigate("/auth")} size="lg">
+          Log In to Continue
+        </Button>
+      </div>
+    );
+  }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="max-w-2xl mx-auto space-y-6">
@@ -85,7 +129,7 @@ const ContactForm = () => {
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="phone">Phone</Label>
+        <Label htmlFor="phone">Phone (optional)</Label>
         <Input
           id="phone"
           type="tel"
