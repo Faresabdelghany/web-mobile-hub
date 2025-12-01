@@ -2,13 +2,15 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
-import { LogOut, User } from "lucide-react";
+import { LogOut, User, Shield } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { useIsAdmin } from "@/hooks/useIsAdmin";
 
 const UserMenu = () => {
   const [user, setUser] = useState<any>(null);
   const navigate = useNavigate();
   const { toast } = useToast();
+  const { isAdmin } = useIsAdmin();
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
@@ -45,6 +47,12 @@ const UserMenu = () => {
         <User className="h-4 w-4" />
         <span className="hidden sm:inline">{user.email}</span>
       </div>
+      {isAdmin && (
+        <Button onClick={() => navigate("/admin")} variant="ghost" size="sm">
+          <Shield className="h-4 w-4" />
+          <span className="hidden sm:inline ml-2">Admin</span>
+        </Button>
+      )}
       <Button onClick={handleLogout} variant="ghost" size="sm">
         <LogOut className="h-4 w-4" />
         <span className="hidden sm:inline ml-2">Logout</span>
