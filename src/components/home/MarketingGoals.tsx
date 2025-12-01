@@ -68,7 +68,7 @@ export default function MarketingGoals() {
             </h2>
 
             <Button className="bg-black text-white hover:bg-gray-800 px-6 py-3 rounded-md font-medium group text-sm sm:text-base">
-              Get Free Quote
+              Contact us
               <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Button>
           </div>

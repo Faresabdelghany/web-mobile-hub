@@ -27,39 +27,39 @@ export default function CTASection() {
         </div>
 
         {/* Contact Form */}
-        <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 sm:p-6 lg:p-8 shadow-xl">
+        <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl border border-gray-200">
           <form className="space-y-4 sm:space-y-5">
-            <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
+            <div className="grid md:grid-cols-2 gap-4 sm:gap-5">
               <Input
                 type="text"
                 placeholder="Name"
-                className="bg-white border-gray-300 text-black placeholder:text-gray-500 h-12 sm:h-14 rounded-lg text-sm sm:text-base"
+                className="bg-gray-50 border-gray-300 text-black placeholder:text-gray-500 h-12 sm:h-14 rounded-xl text-sm sm:text-base focus:border-gray-400 focus:ring-1 focus:ring-gray-400"
               />
               <Input
                 type="email"
                 placeholder="Email"
-                className="bg-white border-gray-300 text-black placeholder:text-gray-500 h-12 sm:h-14 rounded-lg text-sm sm:text-base"
+                className="bg-gray-50 border-gray-300 text-black placeholder:text-gray-500 h-12 sm:h-14 rounded-xl text-sm sm:text-base focus:border-gray-400 focus:ring-1 focus:ring-gray-400"
               />
             </div>
 
             <Input
               type="text"
               placeholder="Interested in..."
-              className="bg-white border-gray-300 text-black placeholder:text-gray-500 h-12 sm:h-14 rounded-lg text-sm sm:text-base"
+              className="bg-gray-50 border-gray-300 text-black placeholder:text-gray-500 h-12 sm:h-14 rounded-xl text-sm sm:text-base focus:border-gray-400 focus:ring-1 focus:ring-gray-400"
             />
 
             <Textarea
               placeholder="Tell us about your project..."
               rows={4}
-              className="bg-white border-gray-300 text-black placeholder:text-gray-500 rounded-lg resize-none text-sm sm:text-base"
+              className="bg-gray-50 border-gray-300 text-black placeholder:text-gray-500 rounded-xl resize-none text-sm sm:text-base focus:border-gray-400 focus:ring-1 focus:ring-gray-400"
             />
 
-            <div className="flex justify-center">
+            <div className="flex justify-end pt-2">
               <Button
                 type="submit"
-                className="bg-black text-white hover:bg-gray-800 px-6 sm:px-8 py-2.5 sm:py-3 rounded-md font-medium text-sm sm:text-base w-full sm:w-auto"
+                className="bg-black text-white hover:bg-gray-800 px-8 sm:px-10 py-3 sm:py-3.5 rounded-full font-medium text-sm sm:text-base transition-all"
               >
-                Request a Quote
+                Submit Request
               </Button>
             </div>
           </form>

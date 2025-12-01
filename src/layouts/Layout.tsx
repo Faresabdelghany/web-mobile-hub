@@ -64,6 +64,16 @@ export default function Layout({ children }: LayoutProps) {
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-8">
               <button
+                onClick={() => scrollToSection("home")}
+                className={`transition-colors text-sm font-medium ${
+                  activeSection === "home"
+                    ? "text-background"
+                    : "text-background/80 hover:text-background"
+                }`}
+              >
+                Company
+              </button>
+              <button
                 onClick={() => scrollToSection("company")}
                 className={`transition-colors text-sm font-medium ${
                   activeSection === "company"
@@ -82,16 +92,6 @@ export default function Layout({ children }: LayoutProps) {
                 }`}
               >
                 Programs
-              </button>
-              <button
-                onClick={() => scrollToSection("home")}
-                className={`transition-colors text-sm font-medium ${
-                  activeSection === "home"
-                    ? "text-background"
-                    : "text-background/80 hover:text-background"
-                }`}
-              >
-                Company
               </button>
               <button
                 onClick={() => scrollToSection("team")}
@@ -125,6 +125,16 @@ export default function Layout({ children }: LayoutProps) {
           {mobileMenuOpen && (
             <nav className="md:hidden mt-4 pb-4 flex flex-col gap-4">
               <button
+                onClick={() => scrollToSection("home")}
+                className={`transition-colors text-sm font-medium text-left ${
+                  activeSection === "home"
+                    ? "text-background"
+                    : "text-background/80"
+                }`}
+              >
+                Company
+              </button>
+              <button
                 onClick={() => scrollToSection("company")}
                 className={`transition-colors text-sm font-medium text-left ${
                   activeSection === "company"
@@ -143,16 +153,6 @@ export default function Layout({ children }: LayoutProps) {
                 }`}
               >
                 Programs
-              </button>
-              <button
-                onClick={() => scrollToSection("home")}
-                className={`transition-colors text-sm font-medium text-left ${
-                  activeSection === "home"
-                    ? "text-background"
-                    : "text-background/80"
-                }`}
-              >
-                Company
               </button>
               <button
                 onClick={() => scrollToSection("team")}
