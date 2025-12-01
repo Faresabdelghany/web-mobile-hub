@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { Menu, X, LogOut, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "@/hooks/use-toast";
 
 const navItems = [
   { id: "home", label: "About Us" },
@@ -14,6 +17,8 @@ const Navigation = () => {
   const [activeSection, setActiveSection] = useState("home");
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [user, setUser] = useState<any>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,6 +42,18 @@ const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setUser(session?.user ?? null);
+    });
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+      setUser(session?.user ?? null);
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -48,6 +65,14 @@ const Navigation = () => {
       });
       setMobileMenuOpen(false);
     }
+  };
+
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    toast({
+      title: "Logged out",
+      description: "You've been successfully logged out.",
+    });
   };
 
   return (
@@ -95,6 +120,22 @@ const Navigation = () => {
               >
                 Contact Us
               </Button>
+              
+              {user ? (
+                <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <User className="h-4 w-4" />
+                    <span className="hidden lg:inline">{user.email}</span>
+                  </div>
+                  <Button onClick={handleLogout} variant="ghost" size="sm">
+                    <LogOut className="h-4 w-4" />
+                  </Button>
+                </div>
+              ) : (
+                <Button onClick={() => navigate("/auth")} variant="outline" size="sm">
+                  Log In
+                </Button>
+              )}
             </div>
 
             {/* Mobile Menu Button */}
@@ -147,6 +188,32 @@ const Navigation = () => {
           >
             Contact Us
           </Button>
+          
+          {user ? (
+            <Button
+              onClick={handleLogout}
+              variant="outline"
+              size="lg"
+              className="animate-fade-in"
+              style={{ animationDelay: `${(navItems.length + 1) * 50}ms` }}
+            >
+              <LogOut className="h-4 w-4 mr-2" />
+              Logout
+            </Button>
+          ) : (
+            <Button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                navigate("/auth");
+              }}
+              variant="outline"
+              size="lg"
+              className="animate-fade-in"
+              style={{ animationDelay: `${(navItems.length + 1) * 50}ms` }}
+            >
+              Log In
+            </Button>
+          )}
         </nav>
       </div>
 
