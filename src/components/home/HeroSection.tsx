@@ -1,8 +1,19 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 
 export default function HeroSection() {
+  const scrollToContact = () => {
+    const element = document.getElementById("contact");
+    if (element) {
+      const offset = 80;
+      const elementPosition = element.offsetTop - offset;
+      window.scrollTo({
+        top: elementPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <div id="home" className="bg-black text-white px-4 sm:px-6 md:px-10 lg:px-20 py-12 sm:py-16 md:py-20 lg:py-32">
       <div className="max-w-7xl mx-auto">
@@ -14,12 +25,13 @@ export default function HeroSection() {
               Agency.
             </h1>
 
-            <Link to="/contact">
-              <Button className="bg-white text-black hover:bg-gray-100 px-6 py-3 rounded-md font-medium group text-sm sm:text-base">
-                Contact Us
-                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </Link>
+            <Button
+              onClick={scrollToContact}
+              className="bg-white text-black hover:bg-gray-100 px-6 py-3 font-medium group text-sm sm:text-base"
+            >
+              Contact Us
+              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Button>
           </div>
 
           <div className="relative">

@@ -58,6 +58,18 @@ export default function MarketingGoals() {
     setCurrentIndex(index);
   };
 
+  const scrollToContact = () => {
+    const element = document.getElementById("contact");
+    if (element) {
+      const offset = 80;
+      const elementPosition = element.offsetTop - offset;
+      window.scrollTo({
+        top: elementPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <div id="team" className="bg-white px-4 sm:px-6 md:px-10 lg:px-20 py-12 sm:py-16 md:py-20">
       <div className="max-w-7xl mx-auto">
@@ -67,7 +79,10 @@ export default function MarketingGoals() {
               Exceed your Marketing Goals with our All-in-one Marketing Solution
             </h2>
 
-            <Button className="bg-black text-white hover:bg-gray-800 px-6 py-3 rounded-md font-medium group text-sm sm:text-base">
+            <Button
+              onClick={scrollToContact}
+              className="bg-black text-white hover:bg-gray-800 px-6 py-3 font-medium group text-sm sm:text-base"
+            >
               Contact us
               <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Button>

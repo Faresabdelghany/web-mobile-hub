@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { createPageUrl } from "@/utils";
 import { Menu, X } from "lucide-react";
+import climoraLogo from "@/assets/climora_all_caps_navyblue_trans_.png";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -56,9 +57,9 @@ export default function Layout({ children }: LayoutProps) {
           <div className="flex items-center justify-between">
             <button
               onClick={() => scrollToSection("home")}
-              className="text-xl md:text-2xl font-bold text-background cursor-pointer hover:opacity-90 transition-opacity"
+              className="text-xl md:text-2xl font-bold text-white cursor-pointer hover:opacity-90 transition-opacity"
             >
-              Geener
+              CLIMORA
             </button>
 
             {/* Desktop Navigation */}
@@ -185,7 +186,7 @@ export default function Layout({ children }: LayoutProps) {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-8 sm:gap-10 md:gap-12 mb-8 sm:mb-12">
             <div className="sm:col-span-2 md:col-span-5">
-              <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Geener</h3>
+              <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">CLIMORA</h3>
               <p className="text-xs sm:text-sm opacity-80 leading-relaxed mb-3 sm:mb-4">
                 We are a fully transparent, data-driven and adaptive team who are very thankful for our close relationships.
               </p>
@@ -231,7 +232,7 @@ export default function Layout({ children }: LayoutProps) {
           </div>
 
           <div className="border-t border-background/20 pt-6 sm:pt-8 text-center text-xs sm:text-sm opacity-80">
-            <p>Copyright geener {new Date().getFullYear()} All Right Reserved</p>
+            <p>Copyright Climora {new Date().getFullYear()} All Right Reserved</p>
           </div>
         </div>
       </footer>
