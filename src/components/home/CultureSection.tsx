@@ -3,13 +3,13 @@ import React from "react";
 const sections = [
   {
     title: "Excellence in Customer Experience and Team Culture",
-    description: "At Geener Agency we're passionate about customer experience and team culture. When you choose to join Geener Agency you're joining a team that genuinely loves what they do. Whether SEO, PPC, Web, Social, or Strategy, the people that power Redesign.co genuinely love the work they contribute.",
+    description: "CLIMORA was built on a simple belief: marketing is not a service,it is a force that shapes industries, societies, and the future. From this belief, we positioned ourselves at the center of the Middle East’s most influential sectors: E-commerce, Education, and the Digital Economy.",
     image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80",
     imagePosition: "right"
   },
   {
     title: "Self motivated individuals go a long ways at Geener.",
-    description: "If you're self motivated to achieve excellence in all that you do, we want to hear from you! We believe that self motivated team members also excite our partners when engaging Geener Agency for various marketing strategies. With tons of time off, industry leading medical, vision, and dental benefits, and competitive wages.",
+    description: "We partner with ambitious brands that seek more than visibility; they seek purpose, meaning, and connection. Through deep strategic thinking and innovation-driven insight, CLIMORA helps organizations transform digital opportunities into lasting, human-centered impact. Every project we take on is a step toward reshaping how consumers interact with the world around them and how brands define their role in people’s lives.",
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80",
     imagePosition: "left"
   }
@@ -17,20 +17,19 @@ const sections = [
 
 export default function CultureSection() {
   return (
-    <div id="company" className="bg-white px-4 sm:px-6 md:px-10 lg:px-20 py-12 sm:py-16 md:py-20">
-      <div className="max-w-7xl mx-auto space-y-12 sm:space-y-16 md:space-y-20">
+    <div id="company" className="bg-white px-4 sm:px-6 md:px-10 lg:px-20 py-16 sm:py-24 md:py-32">
+      <div className="max-w-7xl mx-auto space-y-20 sm:space-y-24 md:space-y-32">
         {sections.map((section, index) => (
           <div
             key={index}
-            className={`grid lg:grid-cols-2 gap-8 md:gap-12 items-center ${
-              section.imagePosition === "left" ? "lg:grid-flow-dense" : ""
-            }`}
+            className={`grid lg:grid-cols-2 gap-12 md:gap-20 items-center ${section.imagePosition === "left" ? "lg:grid-flow-dense" : ""
+              }`}
           >
             <div className={section.imagePosition === "left" ? "lg:col-start-2" : ""}>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black leading-tight mb-4 md:mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black leading-tight mb-6 md:mb-8">
                 {section.title}
               </h2>
-              <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
+              <p className="text-gray-600 leading-relaxed text-lg sm:text-xl">
                 {section.description}
               </p>
             </div>

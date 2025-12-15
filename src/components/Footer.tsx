@@ -1,8 +1,10 @@
+import { Facebook, Instagram, Linkedin } from "lucide-react";
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-foreground text-background py-16 px-6">
+    <footer className="bg-foreground text-primary-foreground py-16 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-12">
           <div className="md:col-span-5">
@@ -11,6 +13,18 @@ const Footer = () => {
               We are a fully transparent, data-driven and adaptive team who are very thankful for our close relationships.
             </p>
             <p className="text-sm opacity-80">1900-347-0123</p>
+
+            <div className="flex gap-4 mt-6">
+              <a href="#" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors" aria-label="Facebook">
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a href="#" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors" aria-label="Instagram">
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a href="#" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors" aria-label="LinkedIn">
+                <Linkedin className="w-5 h-5" />
+              </a>
+            </div>
           </div>
 
           <div className="md:col-span-2">
@@ -39,7 +53,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-background/20 pt-8 text-center text-sm opacity-80">
+        <div className="border-t border-primary-foreground/20 pt-8 text-center text-sm opacity-80">
           <p>Copyright geener {currentYear} All Right Reserved</p>
         </div>
       </div>

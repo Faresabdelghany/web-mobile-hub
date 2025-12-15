@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { createPageUrl } from "@/utils";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Facebook, Instagram, Linkedin } from "lucide-react";
 import climoraLogo from "@/assets/climora_all_caps_navyblue_trans_.png";
 
 interface LayoutProps {
@@ -66,41 +66,37 @@ export default function Layout({ children }: LayoutProps) {
             <nav className="hidden md:flex items-center gap-8">
               <button
                 onClick={() => scrollToSection("home")}
-                className={`transition-colors text-sm font-medium ${
-                  activeSection === "home"
-                    ? "text-background"
-                    : "text-background/80 hover:text-background"
-                }`}
+                className={`transition-colors text-sm font-medium ${activeSection === "home"
+                  ? "text-background"
+                  : "text-background/80 hover:text-background"
+                  }`}
               >
                 Company
               </button>
               <button
                 onClick={() => scrollToSection("company")}
-                className={`transition-colors text-sm font-medium ${
-                  activeSection === "company"
-                    ? "text-background"
-                    : "text-background/80 hover:text-background"
-                }`}
+                className={`transition-colors text-sm font-medium ${activeSection === "company"
+                  ? "text-background"
+                  : "text-background/80 hover:text-background"
+                  }`}
               >
                 About Us
               </button>
               <button
                 onClick={() => scrollToSection("programs")}
-                className={`transition-colors text-sm font-medium ${
-                  activeSection === "programs"
-                    ? "text-background"
-                    : "text-background/80 hover:text-background"
-                }`}
+                className={`transition-colors text-sm font-medium ${activeSection === "programs"
+                  ? "text-background"
+                  : "text-background/80 hover:text-background"
+                  }`}
               >
                 Programs
               </button>
               <button
                 onClick={() => scrollToSection("team")}
-                className={`transition-colors text-sm font-medium ${
-                  activeSection === "team"
-                    ? "text-background"
-                    : "text-background/80 hover:text-background"
-                }`}
+                className={`transition-colors text-sm font-medium ${activeSection === "team"
+                  ? "text-background"
+                  : "text-background/80 hover:text-background"
+                  }`}
               >
                 Clients
               </button>
@@ -127,41 +123,37 @@ export default function Layout({ children }: LayoutProps) {
             <nav className="md:hidden mt-4 pb-4 flex flex-col gap-4">
               <button
                 onClick={() => scrollToSection("home")}
-                className={`transition-colors text-sm font-medium text-left ${
-                  activeSection === "home"
-                    ? "text-background"
-                    : "text-background/80"
-                }`}
+                className={`transition-colors text-sm font-medium text-left ${activeSection === "home"
+                  ? "text-background"
+                  : "text-background/80"
+                  }`}
               >
                 Company
               </button>
               <button
                 onClick={() => scrollToSection("company")}
-                className={`transition-colors text-sm font-medium text-left ${
-                  activeSection === "company"
-                    ? "text-background"
-                    : "text-background/80"
-                }`}
+                className={`transition-colors text-sm font-medium text-left ${activeSection === "company"
+                  ? "text-background"
+                  : "text-background/80"
+                  }`}
               >
                 About Us
               </button>
               <button
                 onClick={() => scrollToSection("programs")}
-                className={`transition-colors text-sm font-medium text-left ${
-                  activeSection === "programs"
-                    ? "text-background"
-                    : "text-background/80"
-                }`}
+                className={`transition-colors text-sm font-medium text-left ${activeSection === "programs"
+                  ? "text-background"
+                  : "text-background/80"
+                  }`}
               >
                 Programs
               </button>
               <button
                 onClick={() => scrollToSection("team")}
-                className={`transition-colors text-sm font-medium text-left ${
-                  activeSection === "team"
-                    ? "text-background"
-                    : "text-background/80"
-                }`}
+                className={`transition-colors text-sm font-medium text-left ${activeSection === "team"
+                  ? "text-background"
+                  : "text-background/80"
+                  }`}
               >
                 Clients
               </button>
@@ -188,41 +180,71 @@ export default function Layout({ children }: LayoutProps) {
             <div className="sm:col-span-2 md:col-span-5">
               <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">CLIMORA</h3>
               <p className="text-xs sm:text-sm opacity-80 leading-relaxed mb-3 sm:mb-4">
-                We are a fully transparent, data-driven and adaptive team who are very thankful for our close relationships.
+                We are here to support your brand's next strategic step.<br />
+                For inquiries, consultations, or partnership opportunities, you can reach CLIMORA through any of the following channels:
               </p>
-              <p className="text-xs sm:text-sm opacity-80">1900-347-0123</p>
+
+              <div className="flex gap-4 mt-4 sm:mt-6">
+                <a href="#" className="text-background/80 hover:text-background transition-colors" aria-label="Facebook">
+                  <Facebook className="w-5 h-5" />
+                </a>
+                <a href="#" className="text-background/80 hover:text-background transition-colors" aria-label="Instagram">
+                  <Instagram className="w-5 h-5" />
+                </a>
+                <a href="#" className="text-background/80 hover:text-background transition-colors" aria-label="LinkedIn">
+                  <Linkedin className="w-5 h-5" />
+                </a>
+              </div>
             </div>
 
             <div className="md:col-span-2">
               <h4 className="font-bold text-xs sm:text-sm mb-3 sm:mb-4">Home</h4>
               <ul className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm opacity-80">
                 <li>
-                  <button onClick={() => scrollToSection("programs")} className="hover:opacity-100 transition-opacity">
-                    Programs
-                  </button>
-                </li>
-                <li>
-                  <button onClick={() => scrollToSection("company")} className="hover:opacity-100 transition-opacity">
+                  <button onClick={() => scrollToSection("home")} className="hover:opacity-100 transition-opacity text-left">
                     Company
                   </button>
                 </li>
                 <li>
-                  <button onClick={() => scrollToSection("contact")} className="hover:opacity-100 transition-opacity">
+                  <button onClick={() => scrollToSection("company")} className="hover:opacity-100 transition-opacity text-left">
+                    About Us
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => scrollToSection("programs")} className="hover:opacity-100 transition-opacity text-left">
+                    Programs
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => scrollToSection("team")} className="hover:opacity-100 transition-opacity text-left">
+                    Clients
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => scrollToSection("contact")} className="hover:opacity-100 transition-opacity text-left">
                     Contact Us
                   </button>
                 </li>
               </ul>
             </div>
 
-            <div className="md:col-span-2">
-              <h4 className="font-bold text-xs sm:text-sm mb-3 sm:mb-4">Webmaster</h4>
+
+
+            <div className="md:col-span-3">
+              <h4 className="font-bold text-xs sm:text-sm mb-3 sm:mb-4">Contacts</h4>
               <ul className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm opacity-80">
-                <li><a href="#" className="hover:opacity-100 transition-opacity">FAQ</a></li>
-                <li><a href="#" className="hover:opacity-100 transition-opacity">Resources</a></li>
+                <li className="flex items-center gap-2">
+                  <span className="font-semibold">Email:</span>
+                  <a href="mailto:info@climora.com" className="hover:opacity-100 transition-opacity">info@climora.com</a>
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="font-semibold">Phone:</span>
+                  <a href="tel:+200000000000" className="hover:opacity-100 transition-opacity">+20 000 000 0000</a>
+                </li>
               </ul>
             </div>
 
-            <div className="md:col-span-3">
+            <div className="md:col-span-2">
               <h4 className="font-bold text-xs sm:text-sm mb-3 sm:mb-4">Legal</h4>
               <ul className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm opacity-80">
                 <li><a href="#" className="hover:opacity-100 transition-opacity">Privacy Condition</a></li>

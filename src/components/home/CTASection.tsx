@@ -21,8 +21,8 @@ export default function CTASection() {
           <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-2 sm:mb-3">
             Ready to get Started?
           </h3>
-          <p className="text-gray-600 text-sm sm:text-base max-w-2xl mx-auto px-4">
-            You know what to do - contact us now to discover how we can help your business grow!
+          <p className="text-gray-600 text-lg sm:text-xl max-w-2xl mx-auto px-4">
+            We're always ready to connect, collaborate, and help your brand move forward.
           </p>
         </div>
 
